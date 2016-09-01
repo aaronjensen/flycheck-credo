@@ -14,10 +14,11 @@ M-x package-install RET flycheck-credo RET
 
 Ensure that `credo` is installed in your project.
 
-Require it and ensure you have elixir-mode set up for flycheck:
+Then, in your `init.el`:
 
 ```elisp
-(require 'flycheck-credo)
+(eval-after-load 'flycheck
+  '(flycheck-credo-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 ```
 

@@ -13,7 +13,8 @@
 
 ;; To use it, require it and ensure you have elixir-mode set up for flycheck:
 
-;;   (require 'flycheck-credo)
+;;   (eval-after-load 'flycheck
+;;     '(flycheck-credo-setup))
 ;;   (add-hook 'elixir-mode-hook 'flycheck-mode)
 
 ;;; License:
@@ -55,6 +56,13 @@
    (warning line-start (file-name) ":" line ":" column ": " (or "D" "W")  ": " (message) line-end)
    (warning line-start (file-name) ":" line ": " (or "D" "W")  ": " (message) line-end))
   :modes elixir-mode)
+
+;;;###autoload
+(defun flycheck-credo-setup ()
+  "Setup flycheck-credo.
+Add `elixir-credo' to `flycheck-checkers'."
+  (interactive)
+  (add-to-list 'flycheck-checkers 'elixir-credo t))
 
 (provide 'flycheck-credo)
 ;;; flycheck-credo.el ends here
