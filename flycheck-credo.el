@@ -41,6 +41,7 @@
 (require 'flycheck)
 
 (defun flycheck-credo--working-directory (&rest _ignored)
+  "Find directory with mix.exs."
   (locate-dominating-file buffer-file-name "mix.exs"))
 
 (flycheck-define-checker elixir-credo
