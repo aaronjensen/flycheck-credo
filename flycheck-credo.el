@@ -42,14 +42,16 @@
 
 (defun flycheck-credo--working-directory (&rest _ignored)
   "Find directory with mix.exs."
-  (locate-dominating-file buffer-file-name "mix.exs"))
+  (and buffer-file-name
+       (locate-dominating-file buffer-file-name "mix.exs")))
 
 (flycheck-define-checker elixir-credo
   "Elixir credo checker."
   :command ("mix" "credo" "--format" "flycheck" "--read-from-stdin" source-original)
   :standard-input t
   :predicate
-  (lambda () (locate-dominating-file buffer-file-name "deps/credo"))
+  (lambda () (and buffer-file-name
+                  (locate-dominating-file buffer-file-name "deps/credo")))
   :working-directory flycheck-credo--working-directory
   :error-patterns
   ((info line-start (file-name) ":" line ":" column ": " (or "F" "R" "C")  ": " (message) line-end)
