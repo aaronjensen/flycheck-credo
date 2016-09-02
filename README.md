@@ -1,4 +1,4 @@
-# flycheck-credo
+# flycheck-credo [![MELPA](https://melpa.org/packages/flycheck-credo-badge.svg)](https://melpa.org/#/flycheck-credo)
 
 [flycheck][] checker for [credo][].
 
