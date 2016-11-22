@@ -22,6 +22,14 @@ Then, in your `init.el`:
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 ```
 
+## Options
+
+You can tell flycheck-credo to call credo with the '--strict' argument.
+
+```elisp
+(setq flycheck-elixir-credo-strict t)
+```
+
 ## Thanks
 
 * [@rrrene][] for [credo][].
