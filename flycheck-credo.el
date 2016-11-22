@@ -45,10 +45,12 @@
   (and buffer-file-name
        (locate-dominating-file buffer-file-name "mix.exs")))
 
-(flycheck-def-option-var flycheck-elixir-credo-strict nil (elixir-credo)
-"Whether to pass --strict to credo."
-:type 'boolean
-:safe #'booleanp)
+(flycheck-def-option-var flycheck-elixir-credo-strict nil elixir-credo
+  "Enable strict mode in credo.
+
+When non-nil, pass the `--strict' flag to credo."
+  :type 'boolean
+  :safe #'booleanp)
 
 (flycheck-define-checker elixir-credo
   "Elixir credo checker."
