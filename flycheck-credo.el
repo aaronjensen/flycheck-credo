@@ -67,10 +67,10 @@ When non-nil, pass the `--strict' flag to credo."
                   (locate-dominating-file buffer-file-name "deps/credo")))
   :working-directory flycheck-credo--working-directory
   :error-patterns
-  ((info line-start (file-name) ":" line ":" column ": " (or "F" "R" "C")  ": " (message) line-end)
-   (info line-start (file-name) ":" line ": " (or "F" "R" "C")  ": " (message) line-end)
-   (warning line-start (file-name) ":" line ":" column ": " (or "D" "W")  ": " (message) line-end)
-   (warning line-start (file-name) ":" line ": " (or "D" "W")  ": " (message) line-end))
+  ((info line-start "stdin:" line ":" column ": " (or "F" "R" "C")  ": " (message) line-end)
+   (info line-start "stdin:" line ": " (or "F" "R" "C")  ": " (message) line-end)
+   (warning line-start "stdin:" line ":" column ": " (or "D" "W")  ": " (message) line-end)
+   (warning line-start "stdin:" line ": " (or "D" "W")  ": " (message) line-end))
   :modes elixir-mode)
 
 ;;;###autoload
