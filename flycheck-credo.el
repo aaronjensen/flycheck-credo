@@ -41,9 +41,9 @@
 (require 'flycheck)
 
 (defun flycheck-credo--working-directory (&rest _ignored)
-  "Find directory with mix.exs."
+  "Find directory with from which we can run credo."
   (and buffer-file-name
-       (locate-dominating-file buffer-file-name "mix.exs")))
+       (locate-dominating-file buffer-file-name "deps/credo")))
 
 (flycheck-def-option-var flycheck-elixir-credo-strict nil elixir-credo
   "Enable strict mode in credo.
