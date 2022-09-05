@@ -1,14 +1,7 @@
-# flycheck-credo [![MELPA](https://melpa.org/packages/flycheck-credo-badge.svg)](https://melpa.org/#/flycheck-credo)
+# flycheck-credo
 
-[flycheck][] checker for [credo][].
+[flycheck][] checker for [credo][]. This repository is forked version.
 
-## Installation
-
-You can install this package from [Melpa][]
-
-```
-M-x package-install RET flycheck-credo RET
-```
 
 ## Usage
 
@@ -28,6 +21,12 @@ You can tell flycheck-credo to call credo with the '--strict' argument.
 
 ```elisp
 (setq flycheck-elixir-credo-strict t)
+```
+
+And you cann specify `--checks-with-tag` argument.
+
+```elisp
+(setq flycheck-elixir-credo-checks-with-tag "target")
 ```
 
 ## Thanks
