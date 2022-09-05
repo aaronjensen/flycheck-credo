@@ -52,11 +52,19 @@ When non-nil, pass the `--strict' flag to credo."
   :type 'boolean
   :safe #'booleanp)
 
+(flycheck-def-option-var flycheck-elixir-credo-checks-with-tag nil elixir-credo
+  "Only include checks that match the given tag.
+
+When non-nil, pass the `--checks-with-tag' flag to credo."
+  :type 'string
+  :safe #'stringp)
+
 (flycheck-define-checker elixir-credo
   "Elixir credo checker."
   :command ("mix"
             "credo"
             (option-flag "--strict" flycheck-elixir-credo-strict)
+            (option "--checks-with-tag=" flycheck-elixir-credo-checks-with-tag concat)
             "--format"
             "flycheck"
             "--read-from-stdin"
