@@ -71,7 +71,7 @@ When non-nil, pass the `--strict' flag to credo."
    (info line-start (file-name) ":" line ": " (or "F" "R" "C")  ": " (message) line-end)
    (warning line-start (file-name) ":" line ":" column ": " (or "D" "W")  ": " (message) line-end)
    (warning line-start (file-name) ":" line ": " (or "D" "W")  ": " (message) line-end))
-  :modes elixir-mode)
+  :modes (elixir-ts-mode elixir-mode))
 
 ;;;###autoload
 (defun flycheck-credo-setup ()
