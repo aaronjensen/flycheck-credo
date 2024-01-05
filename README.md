@@ -22,6 +22,8 @@ Then, in your `init.el`:
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 ```
 
+This package works with both [elixir-ts-mode](https://github.com/wkirschbaum/elixir-ts-mode) and [elixir-mode](https://github.com/elixir-editors/emacs-elixir). 
+
 ## Options
 
 You can tell flycheck-credo to call credo with the '--strict' argument.
